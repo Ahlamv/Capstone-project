@@ -19,7 +19,7 @@
     
                 if(data.results.length > 0){
                     data.results.forEach(movie =>{
-                        const imageUrl = data.poster_path 
+                        const imageUrl = movie.poster_path 
                         ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
                         : 'https://via.placeholder.com/200x300?text=No+Image';
                        
@@ -59,11 +59,11 @@
             container.innerHTML = '';
 
             if(data){
-                const imageUrl = data.poster_path
+                const imageUrl = movie.poster_path
                     ? `https://image.tmdb.org/t/p/w500${data.poster_path}`
                     : 'https://via.placeholder.com/200x300?text=No+Image';
                    
-                    const template=document.getElementById('movie-template');
+                    const template=document.getElementById('main-template');
                     const clone= template.content.cloneNode(true);
                     clone.querySelector('.moviePoster').src = imageUrl;
                     clone.querySelector('.moviePoster').alt = movie.title;
@@ -100,10 +100,10 @@
         if(data.results.length > 0){
             data.results.forEach(movie =>{
                 if(!movie.poster_path || !movie.title)return;
-                const imageUrl = data.poster_path 
+                const imageUrl = movie.poster_path 
                 ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
                 : 'https://via.placeholder.com/200x300?text=No+Image';
-                const template=document.getElementById('movie-template');
+                const template=document.getElementById('main-template');
                 const clone= template.content.cloneNode(true);
                 clone.querySelector('.moviePoster').src = imageUrl;
                 clone.querySelector('.moviePoster').alt = movie.title;

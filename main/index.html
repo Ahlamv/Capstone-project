@@ -8,10 +8,12 @@
 </head>
 <body>
     <header>
-        <input type="text" id="search-input" placeholder="Search for Movie...">
-        <button id="search-button">Search</button>
+        <h1>Welcome to Movie Explorer</h1>
+          <p>Find the latest, top-rated, and all your favorite movies in one place!</p>
     </header>
     <main>
+        <input type="text" id="search-input" placeholder="Search for Movie...">
+        <button id="search-button">Search</button>
         <section id="movies-container">
         </section>
         <div><h3>Latest</h3></div>
@@ -28,6 +30,14 @@
                 <h2 class="movieTitle"></h2>
                 <p class="movieDate"></p>
                 <p class="movieDescription"></p>
+                </div></div>
+        </template>
+        <template id="main-template">
+            <div class="main">
+                <div class="movieImage"><img class="moviePoster" src="" alt="Movie Poster"></div>
+                <div>
+                <h2 class="movieTitle"></h2>
+                <p class="movieDate"></p>
                 </div></div>
         </template>
     </main>
