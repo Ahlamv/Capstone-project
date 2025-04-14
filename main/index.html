@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <input type="text" id="search-input" placeholder="Search for Movie...">
+        <button id="search-button">Search</button>
+    </header>
+    <main>
+        <section id="movies-container">
+        </section>
+        <div><h3>Latest</h3></div>
+        <section id="Latest-container">
+        </section>
+        <div><h3>Top Rated</h3></div>
+        <section id="Toprated-container">
+        </section>
+
+        <template id="movie-template">
+            <div class="movie">
+                <div class="movieImage"><img class="moviePoster" src="" alt="Movie Poster"></div>
+                <div>
+                <h2 class="movieTitle"></h2>
+                <p class="movieDate"></p>
+                <p class="movieDescription"></p>
+                </div></div>
+        </template>
+    </main>
+    <footer>
+        <p>&copy; 2025 Movie</p>
+    </footer>
+    <script src="script.js"></script>
+    
+</body>
+</html>
