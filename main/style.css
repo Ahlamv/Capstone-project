@@ -1,3 +1,8 @@
+@media (max-width:768px) {
+  .movies-container{
+    flex:1 1 150%;
+  }
+}
 body{
   background-color:#000;
   text-align:center;
@@ -34,6 +39,7 @@ div h3{
   margin-left:110px;
 }
 button{
+  margin-right:20px;
   font-size:13px;
   padding: 12px;
   background-color:#e71313;
@@ -49,7 +55,8 @@ input{
   border-radius: 8px;
   padding: 12px;
   width: 50%;
-  margin-right:10px;
+  margin-right:0px;
+  margin-bottom: 20px;
   box-shadow: 1px 1px 1px #190c0c;
   border:1px solid  #535557;
 }
@@ -138,7 +145,4 @@ img{
 .movieImage{
   display:flex;
   justify-content: center;
-  }
-.movie .movie-description{
-  margin:right;
   }
