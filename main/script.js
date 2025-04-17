@@ -1,10 +1,11 @@
-     async function fetchmovie(){
-
+    async function fetchmovie() {
+            
             const movieName=document.getElementById('search-input').value;
             const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZDc5Nzg1Zjk4OGY4MWU5YWU2MDM1ZjY0ZDA4MmNhNSIsIm5iZiI6MTc0MzU5Njc0My45NTksInN1YiI6IjY3ZWQyY2M3MGQ3MTIxYTljYzAxMzk4MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VOC55mDLn4vjYGkdzoN1Dgb6HXZRKqCtagmXyCfLInM';
             const url =`https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(movieName)}`;
 
             try {
+                document.getElementById('main-container').style.display = 'none';
                 const res=await fetch(url,{
                 headers:{
                     Authorization:`Bearer ${API_KEY}`,
@@ -47,6 +48,7 @@
             const url=`https://api.themoviedb.org/3/movie/now_playing?language=en-US`
 
         try {
+            document.getElementById('main-container').style.display = 'none';
             const res=await fetch(url,{
             headers:{
                 Authorization:`Bearer ${API_KEY}`,
@@ -88,6 +90,7 @@
         const url=`https://api.themoviedb.org/3/movie/top_rated`
 
     try {
+        document.getElementById('main-container').style.display = 'none';
         const res=await fetch(url,{
         headers:{
             Authorization:`Bearer ${API_KEY}`,
@@ -137,8 +140,8 @@ try {
     );
 
     const data = await res.json();
-    const container = document.getElementById('movies-container');
-    container.innerHTML = '<h3>Upcoming</h3>';
+    const container = document.getElementById('main-container');
+    //container.innerHTML = '<h3>Upcoming<br></h3>';
 
 
     if(data.results.length > 0){

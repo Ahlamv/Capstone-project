@@ -1,6 +1,9 @@
-@media (max-width:768px) {
+@media (min-width:768px) {
   .movies-container{
-    flex:1 1 150%;
+
+  }
+  input{
+    width:90%;
   }
 }
 body{
@@ -29,22 +32,19 @@ header p{
   text-align:center;
   color: #aaa;
 }
-div h3{
+#head{
+  width:100%;
   color:#ffffff;
-  border-radius:10px;
-  border-color: #ccc;
-  background-color:#e71313;
-  padding:8px;
-  width:150px;
-  margin-left:110px;
+  background-color:#a0bed320;
 }
-button{
+
+#toprated-button,#nowplaying-button{
   margin-right:20px;
   font-size:13px;
   padding: 12px;
-  background-color:#e71313;
+  background-color:#a0bed320;
   border:none;
-  border-radius:10px;
+  border-radius:8px;
   color:white;
   box-shadow: 2px 2px #a0bed320;
   cursor:pointer;
@@ -76,7 +76,7 @@ img{
   border-radius: 12px;
 
 }
- #movies-container{
+ #movies-container,#main-container{
   display:flex;
   flex-wrap:wrap;
   gap:20px;
@@ -145,4 +145,8 @@ img{
 .movieImage{
   display:flex;
   justify-content: center;
+  }
+  footer{
+    background-color:#a0bed320 ;
+    padding: 10px;
   }
