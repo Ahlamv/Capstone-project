@@ -45,8 +45,7 @@
         }
         async function fetchnowplayingmovie(){
             const API_KEY='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZDc5Nzg1Zjk4OGY4MWU5YWU2MDM1ZjY0ZDA4MmNhNSIsIm5iZiI6MTc0MzU5Njc0My45NTksInN1YiI6IjY3ZWQyY2M3MGQ3MTIxYTljYzAxMzk4MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VOC55mDLn4vjYGkdzoN1Dgb6HXZRKqCtagmXyCfLInM';
-            const url=`https://api.themoviedb.org/3/movie/now_playing?language=en-US`
-
+            const url=`https://api.themoviedb.org/3/movie/now_playing`
         try {
             document.getElementById('main-container').style.display = 'none';
             const res=await fetch(url,{
@@ -91,6 +90,7 @@
 
     try {
         document.getElementById('main-container').style.display = 'none';
+      
         const res=await fetch(url,{
         headers:{
             Authorization:`Bearer ${API_KEY}`,
@@ -128,10 +128,9 @@
 async function fetchupcomingmovie(){
     const API_KEY='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZDc5Nzg1Zjk4OGY4MWU5YWU2MDM1ZjY0ZDA4MmNhNSIsIm5iZiI6MTc0MzU5Njc0My45NTksInN1YiI6IjY3ZWQyY2M3MGQ3MTIxYTljYzAxMzk4MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VOC55mDLn4vjYGkdzoN1Dgb6HXZRKqCtagmXyCfLInM';
     const url=`https://api.themoviedb.org/3/movie/upcoming`
-    
-
 try {
     const res=await fetch(url,{
+
     headers:{
         Authorization:`Bearer ${API_KEY}`,
         'Content-Type':'application/json;charset=utf-8'
@@ -141,7 +140,7 @@ try {
 
     const data = await res.json();
     const container = document.getElementById('main-container');
-    //container.innerHTML = '<h3>Upcoming<br></h3>';
+
 
 
     if(data.results.length > 0){
@@ -173,4 +172,4 @@ console.error('Error fetching movie:', error);
         document.getElementById('toprated-button').addEventListener('click', fetchtopmovie);
         document.getElementById('nowplaying-button').addEventListener('click', fetchnowplayingmovie);
     
-    
+   

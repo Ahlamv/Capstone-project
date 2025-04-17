@@ -1,10 +1,13 @@
-@media (min-width:768px) {
-  .movies-container{
-
-  }
-  input{
-    width:90%;
-  }
+@media (max-width:768px) {
+  #toprated-button,#nowplaying-button{
+    display: block;
+    width: 80%; 
+    margin: 10px 0 0 30px;
+    justify-content: center;
+}
+header{
+height: 150px;
+}
 }
 body{
   background-color:#000;
@@ -15,7 +18,8 @@ body{
 }
 header{
   background-image:url("../assets/img1.jpg");
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   padding:16px;
   border:1px solid  #535557; 
@@ -38,27 +42,38 @@ header p{
   background-color:#a0bed320;
 }
 
-#toprated-button,#nowplaying-button{
+button{
   margin-right:20px;
   font-size:13px;
   padding: 12px;
-  background-color:#a0bed320;
+  background-color:#e71313;;
   border:none;
   border-radius:8px;
   color:white;
-  box-shadow: 2px 2px #a0bed320;
+  box-shadow: 2px 2px #36393a08;
   cursor:pointer;
+  
 }
+#search-button{
+  background-color:#e71313;
+  cursor:pointer;
+  margin-left: 0px;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+}
+
 input{
   background-color:#a0bed320;
   color:white;
   border-radius: 8px;
-  padding: 12px;
+  padding: 10.5px;
   width: 50%;
   margin-right:0px;
   margin-bottom: 20px;
   box-shadow: 1px 1px 1px #190c0c;
   border:1px solid  #535557;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
 }
 
 .movie-card{
