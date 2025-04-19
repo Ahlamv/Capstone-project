@@ -137,9 +137,28 @@ console.error('Error fetching movie:', error);
 }
 }
 
+        //Show details in alert foem
+        function showalert(message){
+            const alertbox= document.getElementById('alert-main');
+            const alertmessage= document.getElementById('alert-message');
+            const alertclose= document.getElementById('alert-close');
+        
+
+        alertmessage.textContent=message;
+        alertbox.classList.remove('hidden')
+        alertclose.addEventListener('click', () =>{
+            alertbox.classList.add('hidden');
+        });
+
+        alertbox.addEventListener('click', (event) =>{
+            if(event.target === alertbox){
+                alertbox.classList.add('hidden');
+            }
+        });
+    }
+
         //show movie details
         function showDetails(movieId) {
-            const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZDc5Nzg1Zjk4OGY4MWU5YWU2MDM1ZjY0ZDA4MmNhNSIsIm5iZiI6MTc0MzU5Njc0My45NTksInN1YiI6IjY3ZWQyY2M3MGQ3MTIxYTljYzAxMzk4MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VOC55mDLn4vjYGkdzoN1Dgb6HXZRKqCtagmXyCfLInM';
             const url = `https://api.themoviedb.org/3/movie/${movieId}`;
         
             fetch(url, {
@@ -150,12 +169,10 @@ console.error('Error fetching movie:', error);
             })
                 .then(res => res.json())
                 .then(movie => {
-                    alert(`Title: ${movie.title}\nDescription: ${movie.overview}`);
+                    showalert(`Title: ${movie.title}\nDescription: ${movie.overview}`);
                 })
                 .catch(error => console.error('Error fetching movie details:', error));
         }
-        
-        
         
         document.addEventListener('DOMContentLoaded', fetchupcomingmovie);
         document.getElementById('search-button').addEventListener('click', fetchmovie);
