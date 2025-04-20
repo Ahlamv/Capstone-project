@@ -1,5 +1,4 @@
 function moviecard(movie, container){
-    
     if(!movie.poster_path || !movie.title)return;
     const imageUrl = movie.poster_path 
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
@@ -21,8 +20,6 @@ function moviecard(movie, container){
     movieElement.addEventListener('click', () => {
         showDetails(movie.id);
 });
-
-
 
 container.appendChild(clone);
 }
